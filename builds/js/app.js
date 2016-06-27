@@ -1,6 +1,6 @@
 var myApp = angular.module('myApp',
   ['ngRoute', 'firebase'])
-  .constant('FIREBASE_URL', 'https://angreg77.firebaseIO.com/');
+  .constant('FIREBASE_URL', 'https://angdata77.firebaseIO.com/');
 
 
 myApp.run(['$rootScope', '$location',
@@ -23,6 +23,14 @@ myApp.config(['$routeProvider', function($routeProvider) {
     when('/register', {
       templateUrl: 'views/register.html',
       controller: 'RegistrationController'
+    }).
+    when('/checkins/:uId/:mId', {
+      templateUrl: 'views/checkins.html',
+      controller: 'CheckInsController'
+    }).
+    when('/checkins/:uId/:mId/checkinsList', {
+      templateUrl: 'views/checkinslist.html',
+      controller: 'CheckInsController'
     }).
     when('/meetings', {
       templateUrl: 'views/meetings.html',
